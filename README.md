@@ -8,3 +8,5 @@ NMEA format. The string required to determine the position begins with the tag $
 module seperated by semi-colons. Depending on whether the signal is to be acquired from a cold start (the first time a connection is made with a satelite, either during the first 
 time the device is used or when the previous connection has been lost) or a hot start (a connection had been made with a satelite recently) the device could take between 1 to 30 
 seconds to make a connection and begin transmitting data.</p>
+
+<p align="justify">In this code, within a USART RX interrupt routine, it is determined if the received string begins with $GPGGA and if it does, the remaining portion is extracted and saved in the array "buffer" from which the latitude and longitude portions are extracted and transmitted over USART (along with the entire GPGGA string) to be used or displayed.</p>
